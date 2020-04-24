@@ -12,6 +12,9 @@
 Route::get('/','PostController@index');
 
 Auth::routes();
+
+Route::get('/logout', 'Auth\LoginController@logout');
+
 Route::get('/home',['as' => 'home', 'uses' => 'PostController@index']);
 //authentication
 // проверка залогиненного пользователя

@@ -50,7 +50,7 @@
              
                 <a class="dropdown-item" href="{{ url('/user/'.Auth::id()) }}">Мой профиль</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{{ url('/auth/logout') }}">Выйти</a>
+                <a class="dropdown-item" href="{{ url('/logout') }}">Выйти</a>
           </div>
         </li>
        @endif
