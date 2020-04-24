@@ -12,9 +12,9 @@
   }); 
 </script>
 <form action="/new-post" method="post">
-  <input type="hidden" name="_token" value="{{ csrf_token() }}">
+  @csrf
   <div class="form-group">
-    <input required="required" value="{{ old('title') }}" placeholder="Введите название" type="text" name = "title"class="form-control" />
+    <input required="required" value="{{ old('title') }}" placeholder="Введите название" type="text" name = "title" class="form-control" />
   </div>
   <div class="form-group">
     <textarea name='body'class="form-control">{{ old('body') }}</textarea>

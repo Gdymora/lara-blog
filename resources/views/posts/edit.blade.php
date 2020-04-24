@@ -25,3 +25,4 @@
       {!! old('body') !!}
     </textarea>
   </div>
+  @endsectiongit ad

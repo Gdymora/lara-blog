@@ -23,7 +23,7 @@
     </div>
     <div class="list-group-item">
       <article>
-        {!! str_limit($post->body, $limit = 1500, $end = '....... <a href='.url("/".$post->slug).'>Подробнее</a>') !!}
+        {!! Str::limit($post->body, $limit = 1500, $end = '....... <a href='.url("/".$post->slug).'>Подробнее</a>') !!}
       </article>
     </div>
   </div>

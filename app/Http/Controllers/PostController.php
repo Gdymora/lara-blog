@@ -6,6 +6,7 @@ use Redirect;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PostFormRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 //use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
@@ -32,15 +33,15 @@ class PostController extends Controller
      }
    }
 
-   public function store(PostFormRequest $request)
+   public function store(Request $request)
    {
    // $id = Auth::user()->id;
      $post = new Posts();
-     dd($request);
+    // dd($request);
 
-     $post->title = $request->get('title');
-     $post->body = $request->get('body');
-     $post->slug = str_slug($post->title);
+     $post->title = $request->input('title');
+     $post->body = $request->input('body');
+     $post->slug = Str::slug($post->title,"-");
      $post->author_id = auth()->user()->id;
      
      if($request->has('save'))
